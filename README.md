@@ -27,8 +27,11 @@ Ensure you have the following installed:
 ### Installation
 
 1. _Clone the repository_:
+
+   ```
    git clone https://github.com/ayinlaabel/wizer.git
    cd wizer
+   ```
 
 2. _Install dependencies_:
 
