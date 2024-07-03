@@ -1,0 +1,58 @@
+<div
+  class="fixed top-0 left-0 w-full h-full flex justify-center z-[1000]"
+  *ngIf="showModal == true"
+>
+  <div
+    class="absolute bg-[#00000020] w-full h-full z-[1]"
+    (click)="closeModal()"
+  ></div>
+  <div
+    class="w-[40%] mt-[4rem] h-fit bg-[#FFF] z-[100] rounded-[10px] px-4 py-3"
+  >
+    <div class="font-[600] text-center py-2">
+      <p class="text-[1.2rem]">
+        {{ editComment !== null ? "Edit Comment" : "New Entry" }}
+      </p>
+    </div>
+    <form #commentForm="ngForm" (ngSubmit)="handleSubmit(commentForm)">
+      <div class="grid gap-4">
+        <div class="grid gap-2">
+          <label for="">Name</label>
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="comment.name"
+            class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+          />
+        </div>
+        <div class="grid gap-2">
+          <label for="">Email</label>
+          <input
+            type="text"
+            name="email"
+            [(ngModel)]="comment.email"
+            class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+          />
+        </div>
+        <div class="grid gap-2">
+          <label for="">Body</label>
+          <textarea
+            class="w-full bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+            name="body"
+            id=""
+            rows="5"
+            [(ngModel)]="comment.body"
+          ></textarea>
+        </div>
+        <div class="grid gap-2">
+          <button
+            type="submit"
+            class="bg-primaryColor text-[#FFF] py-3 rounded-[5px]"
+          >
+            {{ editComment !== null ? "Edit Comment" : "Add Entry" }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="flex flex-row justify-between py-4 px-[3rem]">
+  <div class="flex gap-3">
+    <span>Row per page</span>
+    <select
+      name=""
+      id=""
+      [(ngModel)]="itemsPerPage"
+      (ngModelChange)="changeItemsPerPage($event)"
+      class="w-[5rem] h-[2rem] bg-[#F5F5F5]"
+    >
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+      <option value="40">40</option>
+      <option value="50">50</option>
+    </select>
+  </div>
+  <div class="flex flex-col items-center">
+    <!-- Help text -->
+    <span class="text-sm text-gray-700 dark:text-gray-400">
+      Showing
+      <span class="font-semibold text-gray-900 dark:text-white">{{
+        itemsPerPage * (currentPage - 1) + 1
+      }}</span>
+      to
+      <span class="font-semibold text-gray-900 dark:text-white">{{
+        itemsPerPage * currentPage
+      }}</span>
+      of
+      <span class="font-semibold text-gray-900 dark:text-white">{{
+        totalItems
+      }}</span>
+      Entries
+    </span>
+    <!-- Buttons -->
+    <div class="flex gap-3">
+      <button
+        class="px-5 hover:bg-primaryColor20 py-2 rounded-[10px]"
+        (click)="pageClicked(currentPage - 1)"
+        [disabled]="currentPage === 1"
+      >
+        Prev
+      </button>
+      <button
+        class="px-5 hover:bg-primaryColor20 py-2 rounded-[10px]"
+        (click)="pageClicked(currentPage + 1)"
+        [disabled]="currentPage === pages.length"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+</div>

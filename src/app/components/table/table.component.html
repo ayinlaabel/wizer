@@ -1,0 +1,60 @@
+<div class="bg-[#FFF] w-full h-full rounded-[15px]">
+  <div class="relative w-full overflow-auto shadow-md sm:rounded-lg">
+    <table
+      class="text-sm w-full text-left rtl:text-right text-gray-500 dark:text-gray-400"
+    >
+      <thead
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+      >
+        <tr>
+          <th
+            *ngFor="let h of tableHeader"
+            scope="col"
+            class="px-6 py-3 text-[.8rem]"
+          >
+            {{ h }}
+          </th>
+          <th scope="col" class="px-6 py-3 text-[.8rem]">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          *ngFor="let data of paginatedData"
+          class="text-[.8rem] odd:bg-white odd:bg-gray-900 even:bg-gray-50 even:bg-gray-800 border-b border-gray-700"
+        >
+          <td class="px-6 py-4 text-[.8rem]" *ngFor="let key of tableHeader">
+            {{ data[key] | truncate : 45 }}
+          </td>
+          <td class="px-6 py-4 text-[.8rem]">
+            <button
+              (click)="handleEdit(data)"
+              class="hover:bg-primaryColor20 px-4 py-2 rounded-[5px]"
+            >
+              Edit
+            </button>
+          </td>
+          <!-- <td class="px-6 py-4">Laptop</td>
+          <td class="px-6 py-4">$2999</td>
+          <td class="px-6 py-4">
+            <a
+              href="#"
+              class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              >Edit</a
+            >
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="tableData.length > 0">
+    <app-pagination
+      [totalItems]="tableData.length"
+      [itemsPerPage]="itemsPerPage"
+      [currentPage]="currentPage"
+      (onClick)="changePage($event)"
+      (itemsPer)="changeItemsPerPage($event)"
+    ></app-pagination>
+  </div>
+</div>

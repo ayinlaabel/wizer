@@ -1,0 +1,163 @@
+<div
+  class="fixed z-[1000] top-0 left-0 w-full h-full flex justify-center overflow-hidden no-scrollbar"
+  *ngIf="showModal == true"
+>
+  <div
+    class="absolute bg-[#00000020] w-full h-full z-[1]"
+    (click)="closeModal()"
+  ></div>
+  <div class="w-[40%] overflow-y-scroll z-[100] no-scrollbar">
+    <form #userForm="ngForm" (submit)="handleSubmit(userForm)">
+      <div
+        class="mt-[4rem] h-fit bg-[#FFF] z-[100] rounded-[10px] px-4 py-3 mb-8"
+      >
+        <div class="font-[600] text-center py-2">
+          <p class="text-[1.2rem]">
+            {{ editUser !== null ? "Edit User" : "New Entry" }}
+          </p>
+        </div>
+        <div class="grid gap-4">
+          <div class="grid gap-2">
+            <label for="">Name</label>
+            <input
+              type="text"
+              name="name"
+              [(ngModel)]="user.name"
+              class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+            />
+          </div>
+          <div class="grid gap-2">
+            <label for="">Username</label>
+            <input
+              type="text"
+              name="username"
+              [(ngModel)]="user.username"
+              class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+            />
+          </div>
+          <div class="grid gap-2">
+            <label for="">Email</label>
+            <input
+              type="text"
+              name="email"
+              [(ngModel)]="user.email"
+              class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+            />
+          </div>
+          <div>
+            <div><p>Address</p></div>
+            <div class="grid gap-2">
+              <label for="">Street</label>
+              <input
+                type="text"
+                name="street"
+                [(ngModel)]="user.address.street"
+                class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+              />
+            </div>
+            <div class="grid gap-2">
+              <label for="">Suite</label>
+              <input
+                type="text"
+                name="suite"
+                [(ngModel)]="user.address.suite"
+                class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+              />
+            </div>
+            <div class="grid gap-2">
+              <label for="">City</label>
+              <input
+                type="text"
+                name="city"
+                [(ngModel)]="user.address.city"
+                class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+              />
+            </div>
+            <div class="grid gap-2">
+              <label for="">Zip Code</label>
+              <input
+                type="text"
+                name="zipcode"
+                [(ngModel)]="user.address.zipcode"
+                class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+              />
+            </div>
+            <div class="grid gap-2">
+              <label for="">Geo</label>
+              <div class="grid grid-cols-2 gap-3">
+                <input
+                  type="text"
+                  name="lat"
+                  [(ngModel)]="user.address.geo.lat"
+                  class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+                />
+                <input
+                  type="text"
+                  name="lng"
+                  [(ngModel)]="user.address.geo.lng"
+                  class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="grid gap-2">
+            <label for="">Phone</label>
+            <input
+              type="text"
+              name="phone"
+              [(ngModel)]="user.phone"
+              class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+            />
+          </div>
+          <div class="grid gap-2">
+            <label for="">Website</label>
+            <input
+              type="text"
+              name="website"
+              [(ngModel)]="user.website"
+              class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+            />
+          </div>
+          <div>
+            <div><p>Company</p></div>
+            <div class="grid gap-2">
+              <label for="">Name</label>
+              <input
+                type="text"
+                name="companyName"
+                [(ngModel)]="user.company.name"
+                class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+              />
+            </div>
+            <div class="grid gap-2">
+              <label for="">Catchphrase</label>
+              <input
+                type="text"
+                name="catchphrase"
+                [(ngModel)]="user.company.catchPhrase"
+                class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+              />
+            </div>
+            <div class="grid gap-2">
+              <label for="">BS</label>
+              <input
+                type="text"
+                name="bs"
+                [(ngModel)]="user.company.bs"
+                class="w-full h-[3rem] bg-[#F5F5F5] focus:outline-none px-3 rounded-[5px]"
+              />
+            </div>
+          </div>
+          <div class="grid gap-2">
+            <button
+              type="submit"
+              class="bg-primaryColor text-[#FFF] py-3 rounded-[5px]"
+            >
+              {{ editUser !== null ? "Edit User" : "Add Entry" }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

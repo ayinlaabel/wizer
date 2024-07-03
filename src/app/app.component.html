@@ -1,0 +1,43 @@
+<div class="w-screen h-screen relative overflow-x-hidden">
+  <div class="h-full w-full">
+    <div class="fixed top-0 left-0 h-[5rem] w-full bg-[#FFF] z-[10]">
+      <div
+        class="flex items-center justify-between w-full h-[5rem] px-[2rem] py-2 border-b-[2px] border-[#00000030]"
+      >
+        <div class="w-[8rem] overflow-hidden">
+          <img src="../assets/logo-dark.png" alt="" class="w-full" />
+        </div>
+        <div class="leading-6 text-right">
+          <p>Welcome</p>
+          <p class="font-[700] text-[1.2rem]">Demo User</p>
+        </div>
+      </div>
+    </div>
+    <div class="max-h-[calc(100% - 5rem)] w-full pt-[5rem] no-scrollbar">
+      <div class="fixed w-[15rem] h-full flex flex-col bg-[#FFF]">
+        <div class="h-[5rem]"></div>
+        <div class="h-fit grid gap-8">
+          <ul *ngFor="let r of routes" class="flex flex-col px-[2rem] gap-3">
+            <a [routerLink]="r.path">
+              <li
+                [ngClass]="{
+                  'bg-primaryColor text-[#FFF] rounded-[10px]':
+                    r.isActive == true
+                }"
+                class="h-[3rem] hover:bg-primaryColor30 flex gap-3 items-center px-4"
+              >
+                <i [ngClass]="r.icon"></i>
+                <span>
+                  {{ r.name }}
+                </span>
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+      <div class="w-full">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
