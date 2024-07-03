@@ -1,27 +1,42 @@
-# Wizer
+# Angular Project for Wizer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
+This is an Angular project built as part of the evaluation process for the position of Front-end Engineer at Wizer. The project includes user and comment management features utilizing the provided API endpoints.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- _Add User_: Create a new user entry.
+- _List Users_: Display a list of all users.
+- _Edit User_: Edit an existing user entry.
+- _Add Comment_: Create a new comment entry.
+- _List Comments_: Display a list of all comments.
+- _Edit Comment_: Edit an existing comment entry.
+- _Pagination_: Navigate through paginated lists of users and comments.
+- _Responsive Design_: Ensures the application is usable on various screen sizes.
+- _Reusable Components_: Components like tables and modals are designed to be reusable.
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+Ensure you have the following installed:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Node.js](https://nodejs.org/) (version 12 or later)
+- [Angular CLI](https://angular.io/cli) (version 8 or later)
+- [Git](https://git-scm.com/)
 
-## Running unit tests
+### Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. _Clone the repository_:
+   git clone https://github.com/ayinlaabel/wizer.git
+   cd wizer
 
-## Running end-to-end tests
+2. _Install dependencies_:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```
+   npm install
+   ```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. _Run the development server_:
+   ```
+   ng serve
+   ```
