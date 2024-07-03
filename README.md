@@ -20,7 +20,7 @@ This is an Angular project built as part of the evaluation process for the posit
 
 Ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (version 12 or later)
+- [Node.js](https://nodejs.org/) (version 20 or later)
 - [Angular CLI](https://angular.io/cli) (version 8 or later)
 - [Git](https://git-scm.com/)
 
